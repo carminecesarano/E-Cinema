@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 //Dati di connessione al database Oracle
 $db_user = 'WEB_APP';
 $db_password = 'web_app';
@@ -13,8 +15,6 @@ if(!$conn){
     trigger_error(htmlentities($error['message'], ENT_QUOTES), E_USER_ERROR);
     exit();
 }
-
-session_start();
 
 //Recupero dati inseriti nel form login
 $username_log = $_POST['username_log'];
@@ -33,10 +33,10 @@ oci_execute($stid);
 
 //se matcha nel database un utente con le credenziali inserite apre una sessione
 if(oci_fetch($stid)==1){
-    $_SESSION["username"] = oci_result($stid, 'USERNAME');
-    $_SESSION["password"] = oci_result($stid, 'PASSWORD');
-    $_SESSION["nome"] = oci_result($stid, 'NOME');
-    $_SESSION["cognome"] = oci_result($stid, 'COGNOME');
+    $_SESSION['username'] = oci_result($stid, 'USERNAME');
+    $_SESSION['password'] = oci_result($stid, 'PWD');
+    $_SESSION['nome'] = oci_result($stid, 'NOME');
+    $_SESSION['cognome'] = oci_result($stid, 'COGNOME');
     header("location:utente.php");
 }
 else{

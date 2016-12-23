@@ -1,3 +1,10 @@
+<?php
+		session_start();
+		if(!isset($_SESSION['username'])){
+		header("location:index.html");
+		}
+	?>
+
 <!DOCTYPE html>
 <head>
 	<title>E-Cinema - Area Riservata</title>
@@ -25,12 +32,6 @@
 		});
 	</script>
 	<!-- //SCRIPT PULSANTE TOP SCROLL -->
-	<?php
-		session_start();
-		if(!isset($_SESSION["username"])){
-		header("location:index.html");
-		}
-	?>
 </head>
 	
 <body>
@@ -103,11 +104,10 @@
 					<ol class="breadcrumb">
 						<?php
 							echo "Benvenuto/a ";
-							echo ucfirst($_SESSION["nome"]);
+							echo ucfirst($_SESSION['nome']);
 							echo "&nbsp";
-							echo ucfirst($_SESSION["cognome"]);
+							echo ucfirst($_SESSION['cognome']);
 						?>
-					  <li><a href="utente.html">BENVENUTO, NOME UTENTE</a></li>
 					</ol>
 				</div>
 				<div class="agileinfo-news-top-grids">
