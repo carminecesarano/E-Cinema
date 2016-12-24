@@ -1,9 +1,9 @@
 <?php
-		session_start();
-		if(!isset($_SESSION['username'])){
-		header("location:index.html");
-		}
-	?>
+	session_start();
+	if(!isset($_SESSION['username'])){
+	header("location:index.php");
+	}
+?>
 
 <!DOCTYPE html>
 <head>
@@ -39,12 +39,12 @@
 	<div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index.html"><h1>E-CINEMA</h1></a>
+				<a href="index.php"><h1>E-CINEMA</h1></a>
 			</div>
 			
 			<div class="sign_in_register">
 				<ul>
-					<li><a href="logout.php" data-toggle="modal" data-target="#myModal">Logout</a></li>
+					<li><a href="logout.php">Logout</a></li>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>
@@ -66,8 +66,8 @@
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav>
 						<ul class="nav navbar-nav">
-							<li class="home_act"><a href="index.html">Home</a></li>
-							<li><a href="film.html">Film</a></li>
+							<li class="home_act"><a href="index.php">Home</a></li>
+							<li><a href="film.php">Film</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cinema <b class="caret"></b></a>
 								<ul class="dropdown-menu multi-column columns-1">
@@ -88,7 +88,7 @@
 									</li>
 								</ul>
 							</li>
-							<li><a href="chisiamo.html">Chi Siamo</a></li>
+							<li><a href="chisiamo.php">Chi Siamo</a></li>
 							<li class="active"><a href="utente.php">Area Riservata</a></li>
 						</ul>
 					</nav>
@@ -130,7 +130,7 @@
 								<div class="col-md-6 w3-agileits-news-left">
 									
 									<div class="col-sm-7 wthree-news-info">
-										<h5><a href="news-single.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
+										<h5><a>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
 										<p>Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</p>
 									</div>
 									<div class="clearfix"> </div>
@@ -138,7 +138,7 @@
 								<div class="col-md-6 w3-agileits-news-left">
 									
 									<div class="col-sm-7 wthree-news-info">
-										<h5><a href="news-single.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
+										<h5><a>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
 										<p>Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</p>
 									</div>
 									<div class="clearfix"> </div>
@@ -179,7 +179,7 @@
 				
 				</div>
 				<div class="col-md-6 footer_grid_right">
-					<a href="index.html"><h2>E-Cinema</h2></a>
+					<a href="index.php"><h2>E-Cinema</h2></a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -188,7 +188,7 @@
 			</div>
 			<div class="col-md-7 footer_grid1_right">
 				<ul>
-					<li><a href="chisiamo.html">Contact Us</a></li>
+					<li><a href="chisiamo.php">Contact Us</a></li>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>

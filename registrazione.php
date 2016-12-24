@@ -24,19 +24,19 @@ $email = $_POST['email'];
 if(strlen($username)<5){
     echo '<script type="text/javascript">'; 
     echo 'alert("Username troppo corto. Inserire almeno 5 caratteri");'; 
-    echo 'window.location.href = "log_sign.html";';
+    echo 'window.location.href = "index.php";';
     echo '</script>';
 }
 if(strlen($password)<5){
     echo '<script type="text/javascript">'; 
     echo 'alert("Password troppo corto. Inserire almeno 5 caratteri");'; 
-    echo 'window.location.href = "log_sign.html";';
+    echo 'window.location.href = "index.php";';
     echo '</script>';
 }
 if($username==$password){
     echo '<script type="text/javascript">'; 
     echo 'alert("Password e username coincidono. Scegliere una password diversa.");'; 
-    echo 'window.location.href = "log_sign.html";';
+    echo 'window.location.href = "index.php";';
     echo '</script>';
 }
 
@@ -53,7 +53,7 @@ $execute = oci_execute($stid);
 if($execute) {
     echo '<script type="text/javascript">'; 
     echo 'alert("Registrazione effettuata con successo.");'; 
-    echo 'window.location.href = "log_sign.html";';
+    echo 'window.location.href = "index.php";';
     echo '</script>';
 }
 

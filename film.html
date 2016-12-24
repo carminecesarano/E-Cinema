@@ -65,12 +65,17 @@ session_start();
 	<div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index.html"><h1>E-CINEMA</h1></a>
+				<a href="index.php"><h1>E-CINEMA</h1></a>
 			</div>
 			
 			<div class="sign_in_register">
 				<ul>
-					<li><a href="#" data-toggle="modal" data-target="#myModal">Login & SignUp</a></li>
+					<?php
+						if(isset($_SESSION['username'])){
+							echo '<li><a href="logout.php">Logout</a></li>';
+						}else
+						echo '<li><a href="#" data-toggle="modal" data-target="#myModal">Login & SignUp</a></li>';
+					?>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>
@@ -147,29 +152,34 @@ session_start();
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav>
 						<ul class="nav navbar-nav">
-							<li class="home_act"><a href="index.html">Home</a></li>
-							<li class="active"><a href="film.html">Film</a></li>
+							<li class="home_act"><a href="index.php">Home</a></li>
+							<li class="active"><a href="film.php">Film</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cinema <b class="caret"></b></a>
 								<ul class="dropdown-menu multi-column columns-1">
 									<li>
 										<div class="col-sm-4">
 											<ul class="multi-column-dropdown">
-												<li><a href="genres.html">Napoli</a></li>
-												<li><a href="genres.html">Badgad</a></li>
-												<li><a href="genres.html">Acerra</a></li>
-												<li><a href="genres.html">Liveri</a></li>
-												<li><a href="genres.html">Aleppo</a></li>
-												<li><a href="genres.html">Saviano</a></li>
-												<li><a href="genres.html">Albuquerque</a></li>
-												<li><a href="genres.html">Ano</a></li>
+												<li><a href="">Napoli</a></li>
+												<li><a href="">Badgad</a></li>
+												<li><a href="">Acerra</a></li>
+												<li><a href="">Liveri</a></li>
+												<li><a href="">Aleppo</a></li>
+												<li><a href="">Saviano</a></li>
+												<li><a href="">Albuquerque</a></li>
+												<li><a href="">Ano</a></li>
 											</ul>
 										</div>
 										<div class="clearfix"></div>
 									</li>
 								</ul>
 							</li>
-							<li><a href="chisiamo.html">Chi Siamo</a></li>
+							<li><a href="chisiamo.php">Chi Siamo</a></li>
+							<?php
+								if(isset($_SESSION['username'])){
+									echo '<li><a href="utente.php">Area Riservata</a></li>';
+								}
+							?>
 						</ul>
 					</nav>
 				</div>
@@ -200,7 +210,7 @@ session_start();
 									<tbody>
 									  <tr>
 										<td>1</td>
-										<td class="list-img"><a href="single.html"><img src="images/n1.jpg" alt="" /> <span>War Dogs</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n1.jpg" alt="" /> <span>War Dogs</span></a></td>
 										<td>2013</td>
 										<td>HD</td>
 										<td class="list-info"><a>Regno Unito</a></td>
@@ -209,7 +219,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>2</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -218,7 +228,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>3</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -227,7 +237,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>4</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -236,7 +246,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>5</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -245,7 +255,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>6</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -254,7 +264,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>7</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -263,7 +273,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>8</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -272,7 +282,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>9</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -281,7 +291,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>10</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -309,7 +319,7 @@ session_start();
 									<tbody>
 									  <tr>
 										<td>11</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -318,7 +328,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>12</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -327,7 +337,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>13</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -336,16 +346,16 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>14</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
 										<td class="list-info"><a>...</a></td>
-											<td>0.0</td>
+										<td>0.0</td>
 									  </tr>
 									  <tr>
 										<td>15</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -354,7 +364,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>16</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -363,7 +373,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>17</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -372,7 +382,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>18</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -381,7 +391,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>19</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -390,7 +400,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>20</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -418,7 +428,7 @@ session_start();
 									<tbody>
 									  <tr>
 										<td>21</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -427,7 +437,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>22</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -436,7 +446,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>23</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -445,7 +455,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>24</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -454,7 +464,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>25</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -463,7 +473,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>26</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -472,7 +482,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>27</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -481,7 +491,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>28</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -490,7 +500,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>29</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -499,7 +509,7 @@ session_start();
 									  </tr>
 									  <tr>
 										<td>30</td>
-										<td class="list-img"><a href="single.html"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
+										<td class="list-img"><a href="single.php"><img src="images/n2.jpg" alt="" /> <span>...</span></a></td>
 										<td>...</td>
 										<td>HD</td>
 										<td class="list-info"><a>...</a></td>
@@ -528,7 +538,7 @@ session_start();
 				
 				</div>
 				<div class="col-md-6 footer_grid_right">
-					<a href="index.html"><h2>E-Cinema</h2></a>
+					<a href="index.php"><h2>E-Cinema</h2></a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -537,7 +547,7 @@ session_start();
 			</div>
 			<div class="col-md-7 footer_grid1_right">
 				<ul>
-					<li><a href="chisiamo.html">Contact Us</a></li>
+					<li><a href="chisiamo.php">Contact Us</a></li>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>

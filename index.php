@@ -57,12 +57,17 @@ session_start();
 	<div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index.html"><h1>E-CINEMA</h1></a>
+				<a href="index.php"><h1>E-CINEMA</h1></a>
 			</div>
 			
 			<div class="sign_in_register">
 				<ul>
-					<li><a href="#" data-toggle="modal" data-target="#myModal">Login & SignUp</a></li>
+					<?php
+						if(isset($_SESSION['username'])){
+							echo '<li><a href="logout.php">Logout</a></li>';
+						}else
+						echo '<li><a href="#" data-toggle="modal" data-target="#myModal">Login & SignUp</a></li>';
+					?>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>
@@ -139,8 +144,8 @@ session_start();
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav>
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="film.html">Film</a></li>
+							<li class="active"><a href="index.php">Home</a></li>
+							<li><a href="film.php">Film</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cinema <b class="caret"></b></a>
 								<ul class="dropdown-menu multi-column columns-1">
@@ -161,13 +166,10 @@ session_start();
 									</li>
 								</ul>
 							</li>
-							<li><a href="chisiamo.html">Chi Siamo</a></li>
+							<li><a href="chisiamo.php">Chi Siamo</a></li>
 							<?php
-								session_start();
-								if(!isset($_SESSION['username'])){
-									<html>
-										<li><a>Area Riservata</a></li>
-									</html>
+								if(isset($_SESSION['username'])){
+									echo '<li><a href="utente.php">Area Riservata</a></li>';
 								}
 							?>
 						</ul>
@@ -238,7 +240,7 @@ session_start();
 								<div class="clearfix"> </div>
 								<div class="agileinfo_flexislider_grids">
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m22.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m22.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -248,7 +250,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m2.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m2.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -258,7 +260,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m9.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m9.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -268,7 +270,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m7.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m7.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -278,7 +280,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m11.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m11.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -288,7 +290,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m17.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m17.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -331,7 +333,7 @@ session_start();
 								<div class="clearfix"> </div>
 								<div class="agileinfo_flexislider_grids">
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m2.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m2.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -341,7 +343,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m9.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m9.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -351,7 +353,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m7.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m7.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -361,7 +363,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m11.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m11.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -371,7 +373,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m17.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m17.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -381,7 +383,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m21.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m21.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -424,7 +426,7 @@ session_start();
 								<div class="clearfix"> </div>
 								<div class="agileinfo_flexislider_grids">
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m2.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m2.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -434,7 +436,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m9.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m9.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -444,7 +446,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m7.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m7.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -454,7 +456,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m11.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m11.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -464,7 +466,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m17.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m17.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -474,7 +476,7 @@ session_start();
 										</div>
 									</div>
 									<div class="col-md-2 movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m20.jpg" title="album-name" class="img-responsive" alt=" " /></a>
+										<a href="single.php" class="hvr-shutter-out-horizontal"><img src="images/m20.jpg" title="album-name" class="img-responsive" alt=" " /></a>
 										<div class="mid-1 agileits_layouts_mid_1_home">
 											<div class="mid-2 agile_mid_2_home">
 												<p>2016</p>
@@ -544,7 +546,7 @@ session_start();
 				
 				</div>
 				<div class="col-md-6 footer_grid_right">
-					<a href="index.html"><h2>E-Cinema</h2></a>
+					<a href="index.php"><h2>E-Cinema</h2></a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -553,7 +555,7 @@ session_start();
 			</div>
 			<div class="col-md-7 footer_grid1_right">
 				<ul>
-					<li><a href="chisiamo.html">Contact Us</a></li>
+					<li><a href="chisiamo.php">Contact Us</a></li>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>
