@@ -2,6 +2,8 @@
 <head>
 	<title>E-Cinema - Chi Siamo</title>
 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/contactstyle.css" rel="stylesheet"  type="text/css" media="all" />
@@ -28,7 +30,7 @@
 </head>
 	
 <body>
-<!-- header -->
+<!-- TESTA -->
 	<div class="header">
 		<div class="container">
 			<div class="logo">
@@ -43,8 +45,8 @@
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-<!-- //header -->
-<!-- popup login -->
+<!-- //TESTA -->
+<!-- POPUP LOGIN -->
 	<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -87,9 +89,9 @@
 	</div>
 	<script>
 		$('.toggle').click(function(){
-		  // Switches the Icon
+		  // cambia l'icona
 		  $(this).children('i').toggleClass('fa-pencil');
-		  // Switches the forms  
+		  // cambia il form  
 		  $('.form').animate({
 			height: "toggle",
 			'padding-top': 'toggle',
@@ -98,8 +100,8 @@
 		  }, "slow");
 		});
 	</script>
-<!-- //popup login -->
-<!-- nav -->
+<!-- //POPUP LOGIN -->
+<!-- BARRA MENU -->
 	<div class="movies_nav">
 		<div class="container">
 			<nav class="navbar navbar-default">
@@ -111,7 +113,6 @@
 						<span class="icon-bar"></span>
 					</button>
 				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav>
 						<ul class="nav navbar-nav">
@@ -144,8 +145,8 @@
 			</nav>	
 		</div>
 	</div>
-<!-- //nav -->
-<!-- contact -->
+<!-- //BARRA MENU -->
+<!-- TABELLA CONTATTI -->
 	<div class="contact-agile">
 		<div class="faq">
 			<h4 class="latest-text latest_text">Contact Us</h4>
@@ -181,8 +182,8 @@
 			</div>
 		</div>
 	</div>
-<!-- //contact -->
-<!-- footer -->
+<!-- //TABELLA CONTATTI -->
+<!-- CODA -->
 	<div class="footer">
 		<div class="container">
 			<div class="footer_grid">
@@ -205,7 +206,7 @@
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-<!-- //footer -->
+<!-- //CODA -->
 <script>
 $(document).ready(function(){
     $(".dropdown").hover(            
