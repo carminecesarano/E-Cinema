@@ -168,7 +168,7 @@ session_start();
 									<html>
 										<li><a>Area Riservata</a></li>
 									</html>
-							}
+								}
 							?>
 						</ul>
 					</nav>
