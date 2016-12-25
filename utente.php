@@ -1,4 +1,4 @@
- <?php
+<?php
 	session_start();
 	if(!isset($_SESSION['username'])){
 	header("location:index.php");
@@ -130,7 +130,7 @@
 								<div class="col-md-6 w3-agileits-news-left">
 									
 									<div class="col-sm-7 wthree-news-info">
-										<h5><a>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
+										<h5><a">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
 										<p>Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</p>
 									</div>
 									<div class="clearfix"> </div>
