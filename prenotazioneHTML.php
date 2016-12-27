@@ -103,58 +103,52 @@
 <!-- //BARRA MENU -->
 <!-- faq-banner -->
 	<div class="faq">
-			<div class="container">
-				
-				<div class="agileinfo-news-top-grids">
-					<div class="col-md-8 wthree-top-news-left">
-						
-						<div class="wthree-related-news-left">
-							<div class="wthree-news-top-left">
-								
-								<?php
-										echo '<div class= "form">';
-									  echo '<form action="prenotazione.php" method="post">';
-										echo  '<ul id="form_pren">';
-														 
-										echo  '<li><fieldset>';
-										echo  '<legend> Scegli il Cinema </legend>';
-										echo   '<select name="Cinema">';
-										echo    '<option>Napoli</option>';
-										echo    '<option>Bagdad</option>';
-										echo    '<option>Acerra</option>';
-										echo    '<option>Liveri</option>';
-										echo    '</fieldset></li>';
-														
-										echo    '<li><fieldset>';
-										echo    '<legend> Scegli il Film </legend>';      //Nel fieldset dei film dovremmo far comparire i film effettivamente in programmazione tramite una query
-										echo    '<select name="Film">';
-										echo    '<option>The Wolf of Wall Street</option>';
-										echo    '<option>Minions</option>';
-										echo    '<option>Ecceziunale Veramente</option>';
-										echo    '<option>Rogue One: A Star Wars Story</option>';
-										echo    '<option>Biancaneve sotto i nani</option>';
-										echo    '</fieldset></li>';
-										$data=(date("d-m-y"));
-										echo    ' <li> <label> Scegli la Data';
-										echo    '<input type="date" name="datafilm" min="$data">'; //Impedisce l'iserimento di un data precedente a quella della visita
-										echo    '</label> </li>';
-										echo    '<li> <fieldset>';                                //Anche gli orari dovranno essere quelli realmente disponibili in programmazione 
-										echo    '<legend> Scegli orario </legend>';
-										echo    '<select name="ora">';
-										echo    '<option> 18.30</option>';
-										echo    '<option> 21.30 </option>';
-										echo    '</li> </fieldset>';
-										echo    '<li><button type="submit" value="conferma"></li>';
-														
-										echo    '</ul>';
-										echo    '</form>';
-													
-						?>
-													
-											</div>
-									</div>
-								
-				
+		<div class="container">
+				<div class="wthree-related-news-left">
+					<div class="wthree-news-top-left">
+						<div class= "form">
+							<form action="prenotazione.php" method="post">
+								<ul id="form_pren">
+									<li>
+										<fieldset>
+										<legend> Scegli il Cinema </legend>
+											<select name="Cinema">
+												<option>Napoli</option>
+												<option>Bagdad</option>
+												<option>Acerra</option>
+												<option>Liveri</option>
+										</fieldset>
+									</li>		
+									<li>
+										<fieldset>
+										<legend> Scegli il Film </legend>      <!--Nel fieldset dei film dovremmo far comparire i film effettivamente in programmazione tramite una query-->
+											<select name="Film">
+												<option>The Wolf of Wall Street</option>
+												<option>Minions</option>
+												<option>Ecceziunale Veramente</option>
+												<option>Rogue One: A Star Wars Story</option>
+												<option>Biancaneve sotto i nani</option>
+										</fieldset>
+									</li>
+									$data=(date("d-m-y"));
+									<li>
+										<label> Scegli la Data <input type="date" name="datafilm" min="$data"></label>  <!-- //Impedisce l'iserimento di un data precedente a quella della visita-->
+									</li>
+									<li>
+										<fieldset>                                <!--//Anche gli orari dovranno essere quelli realmente disponibili in programmazione -->
+										<legend> Scegli orario </legend>
+											<select name="ora">
+												<option> 18.30 </option>
+												<option> 21.30 </option>
+										</fieldset>
+									</li> 
+									<li><button type="submit" value="conferma"></li>					
+								</ul>
+							</form>				
+					    </div>
+					</div>		         
+				</div>
+		</div>
 	</div>
 <!-- //faq-banner -->
 <!-- CODA -->
