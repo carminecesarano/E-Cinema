@@ -21,6 +21,7 @@ $film = $_POST["Film"];
 $datafilm = $_POST["datafilm"];
 $orario = $_POST["ora"];
 $nomeutente = $_SESSION['username'];
+$datapren=(date("Y-m-d"));
 
 /*//Con lo script js scegliamo sala, fila e posto sulla mappa
 $sala= $_POST["sala"];
@@ -50,28 +51,23 @@ oci_execute($stid3);
 while (oci_fetch($stid3)) {
     $codcinema = oci_result($stid3, 'CODCINEMA');
 }
-echo $datafilm;
 
 //Query ricerca codice programma
-$sql4 = "SELECT CODPROGRAMMA FROM Amministratore.CALENDARI WHERE ora = '$orario' AND data = '$datafilm' AND film = '$codfilm' AND cinema = '$codcinema'";
+$sql4 = "SELECT CODPROGRAMMA FROM Amministratore.CALENDARI WHERE ora = TO_NUMBER('$orario', '99.99') AND film = '$codfilm' AND cinema = '$codcinema' AND data = TO_DATE('$datafilm','YYYY-MM-DD')";
 $stid4 = oci_parse($conn, $sql4);
 oci_execute($stid4);
 while (oci_fetch($stid4)) {
     $codprogramma = oci_result($stid4, 'CODPROGRAMMA');
 }
-/*
 
-$datapren= (date("d-m-y");
-
-
-/*$query= "INSERT INTO Amministratore.PRENOTAZIONI (utente, programma, pagato, dataprenotazione) values ('$codutente', '$codprogramma', "Y", '$datapren' )";
-
-//Esecuzione della query
-$stid=oci_parse($conn,$query);
-oci_execute($stid);
+//Query insert prenotazione
+$sql5= "INSERT INTO Amministratore.PRENOTAZIONI (utente, programma, pagato, dataprenotazione) values ('$codutente', '$codprogramma', 'Y', TO_DATE('$datapren','YYYY-MM-DD'))";
+$stid5 = oci_parse($conn, $sql5);
+oci_execute($stid5);
+echo "Prenotazione effettuata :)";
 
 //chiusura sessione 
 oci_close($conn);
-*/
+
 ?>
 

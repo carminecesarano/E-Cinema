@@ -123,13 +123,12 @@
 										<fieldset>
 											<legend> Scegli il Film </legend>      <!--Nel fieldset dei film dovremmo far comparire i film effettivamente in programmazione tramite una query-->
 											<select name="Film">
-												<option>The Wolf of Wall Street</option>
 												<option>Sully</option>
 												<option>Animali Fantastici</option>
 											</select>
 										</fieldset>
 									</li>
-									<?php $data=(date("d-m-y"));?>
+									<?php $data=(date("Y-m-d"));?>
 									<li>
 										<fieldset>
 											<legend> Scegli la Data </legend>
@@ -140,8 +139,8 @@
 										<fieldset>                                <!--//Anche gli orari dovranno essere quelli realmente disponibili in programmazione -->
 											<legend> Scegli orario </legend>
 											<select name="ora">
-												<option> 21,05 </option>
-												<option> 22,05 </option>
+												<option> 21.05 </option>
+												<option> 22.05 </option>
 											</select>
 										</fieldset>
 									</li> 
