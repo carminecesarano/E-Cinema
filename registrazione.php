@@ -41,7 +41,7 @@ if($username==$password){
 }
 
 //Criptazione password
-$passwordcript = md5('%password');
+$passwordcript = md5('%password'); 
 
 //Query di inserimento dati  
 $sql = "INSERT INTO Amministratore.UTENTI (Username, Pwd, Cognome, Nome, Email) VALUES ('${username}', '${password}', '${cognome}', '${nome}', '${email}')";

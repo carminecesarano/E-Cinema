@@ -19,12 +19,12 @@ session_start();
 	<link href="css/single.css" rel='stylesheet' type='text/css' />
 	<link href="css/medile.css" rel='stylesheet' type='text/css' />
 	
-	<link href="css/jquery.slidey.min.css" rel="stylesheet"> <!-- BANNER SCORREVOLE -->
+	<link href="css/jquery.slidey.min.css" rel="stylesheet"/> <!-- BANNER SCORREVOLE -->
 	<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" /> <!-- POPUP LOGIN -->
 	<link href="css/font-awesome.min.css" rel="stylesheet" /> <!-- FONT -->
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script> <!-- JAVASCRIPT -->
 	<!-- BOTTONI BANNER -->
-	<link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all"> 
+	<link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all"/> 
 	<script src="js/owl.carousel.js"></script>
 	<script>
 		$(document).ready(function() { 
@@ -37,7 +37,7 @@ session_start();
 		}); 
 	</script> 
 	<!-- //BOTTONI BANNER -->
-	<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'/>
 	<!-- SCRIPT TOP SCROLL -->
 	<script type="text/javascript" src="js/move-top.js"></script>
 	<script type="text/javascript" src="js/easing.js"></script>
@@ -65,8 +65,9 @@ session_start();
 					<?php
 						if(isset($_SESSION['username'])){
 							echo '<li><a href="logout.php">Logout</a></li>';
-						}else
+						}else{
 						echo '<li><a href="#" data-toggle="modal" data-target="#myModal">Login & SignUp</a></li>';
+						}
 					?>
 				</ul>
 			</div>
