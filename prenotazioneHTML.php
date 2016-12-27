@@ -1,7 +1,10 @@
 <?php
 	session_start();
 	if(!isset($_SESSION['username'])){
-	header("location:index.php");
+		echo '<script type="text/javascript">'; 
+    echo 'alert("Effettuare il login prima di procedere alla prenotazione.");'; 
+    echo 'window.location.href = "index.html";';
+    echo '</script>';
 	}
 ?>
 
