@@ -113,10 +113,9 @@
 										<fieldset>
 											<legend> Scegli il Cinema </legend>
 											<select name="Cinema">
-												<option>Napoli</option>
-												<option>Bagdad</option>
-												<option>Acerra</option>
-												<option>Liveri</option>
+												<option>CinemaMosc</option>
+												<option>TheEden</option>
+												<option>TheSpace</option>
 											</select>
 										</fieldset>
 									</li>		
@@ -125,14 +124,12 @@
 											<legend> Scegli il Film </legend>      <!--Nel fieldset dei film dovremmo far comparire i film effettivamente in programmazione tramite una query-->
 											<select name="Film">
 												<option>The Wolf of Wall Street</option>
-												<option>Minions</option>
-												<option>Ecceziunale Veramente</option>
-												<option>Rogue One: A Star Wars Story</option>
-												<option>Biancaneve sotto i nani</option>
+												<option>Sully</option>
+												<option>Animali Fantastici</option>
 											</select>
 										</fieldset>
 									</li>
-									<?php $data=(date("d-m-y")); ?>
+									<?php $data=(date("d-m-y"));?>
 									<li>
 										<fieldset>
 											<legend> Scegli la Data </legend>
@@ -143,8 +140,8 @@
 										<fieldset>                                <!--//Anche gli orari dovranno essere quelli realmente disponibili in programmazione -->
 											<legend> Scegli orario </legend>
 											<select name="ora">
-												<option> 18.30 </option>
-												<option> 21.30 </option>
+												<option> 21,05 </option>
+												<option> 22,05 </option>
 											</select>
 										</fieldset>
 									</li> 

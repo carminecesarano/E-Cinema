@@ -10,50 +10,47 @@ $conn=oci_connect($db_user,$db_password,$db_host);
 
 //Verifica su errori di connessione 
 if(!$conn){
-  $errore=oci_error();
-  trigger_error(htmlentities($errore["message"], ENT_QUOTES)E_USER_ERROR);
-  exit();
+    $error = oci_error();
+    trigger_error(htmlentities($error['message'], ENT_QUOTES), E_USER_ERROR);
+    exit();
 }
 
 // Recupero dati dal form
-
 $cinema= $_POST["Cinema"];
 $film= $_POST["Film"];
 $datafilm= $_POST["datafilm"];
 $orario= $_POST["ora"];
-//Con lo script js scegliamo sala, fila e posto sulla mappa
+
+/*//Con lo script js scegliamo sala, fila e posto sulla mappa
 $sala= $_POST["sala"];
 $fila= $_POST["fila"];
-$posto= $_POST["posto"];
-                            //non sono sicuro se anche i posti selezionati tramite js in questo modo 
-                          //vanno memorizzati nel buffer stdin con il metodo post, dobbiamo controllare se è corretto
+$posto= $_POST["posto"];*/
+
+//Query ricerca codice film
+$sql1 = "SELECT CODFILM FROM Amministratore.Film_Programmazione where titolo = '$film'";
+$stid1 = oci_parse($conn, $sql1);
+oci_execute($stid1);
+while (oci_fetch($stid1)) {
+    $codfilm = oci_result($stid1, 'CODFILM');
+}
+echo $codfilm;
+
+echo $_SESSION['username'];
 
 
-//Query prenotazione del biglietto (dato che non conosco la BD ipotizzo l'esistenza di un' entità "POSTI LIBERI" con gli attributi di sopra)
+/*$codutente= "SELECT CODUTENTE FROM Amministratore.UTENTI WHERE username = '$_SESSION['username']'";
+$codprogramma= "SELECT CODPROGRAMMA FROM Amministratore.CALENDARI WHERE cinema = '$cinema' AND film = '$codfilm' AND data = '$datafilm' AND orario = '$orario'";
+$datapren= (date("d-m-y");
 
-$query="SELECT* FROM Posti_liberi WHERE cinema='$cinema' AND film='$film' AND data='$datafilm' AND sala='$sala' AND fila='$fila' AND posto='$POSTO' AND spettacolo='ora'";
 
+/*$query= "INSERT INTO Amministratore.PRENOTAZIONI (utente, programma, pagato, dataprenotazione) values ('$codutente', '$codprogramma', "Y", '$datapren' )";
 
 //Esecuzione della query
 $stid=oci_parse($conn,$query);
 oci_execute($stid);
 
-if(oci_fetch($stid)==1){
-  echo"Prenotazione effettuata con successo";
-  //Elimino i posti prenotati da quelli liberi
-  $query="DELETE* FROM Posti_liberi WHERE cinema='$cinema' AND film='$film' AND data='$datafilm' AND sala='$sala' AND fila='$fila' AND posto='$POSTO' AND spettacolo='ora'";
-  //libera tutte le risorse associate allo statement $stid
-   oci_free_statement($stid);
-  $stid=oci_parse($conn,$query);
-  oci_execute($stid);
- 
-} else {
-  echo"I posti selezionati non sono disponibili tra quelli liberi";
-    
-}
-
 //chiusura sessione 
 oci_close($conn);
-
+*/
 ?>
 

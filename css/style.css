@@ -40,7 +40,6 @@ ul#form_pren {
 ul#form_pren li {
     display: block;
     margin: 2px;
-    float: left; /* elementi su singola riga */
 }
 /*-- header --*/
 .header {
