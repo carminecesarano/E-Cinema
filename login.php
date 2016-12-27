@@ -42,7 +42,7 @@ if(oci_fetch($stid)==1){
 else{
     echo '<script type="text/javascript">'; 
     echo 'alert("Username o password errati.");'; 
-    echo 'window.location.href = "index.html";';
+    echo 'window.location.href = "index.php";';
     echo '</script>';
 }
 
