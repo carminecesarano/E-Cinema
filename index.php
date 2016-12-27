@@ -8,6 +8,7 @@ session_start();
 
 <!DOCTYPE html>
 <head>
+	<link rel="icon" src="icons/favicon.ico"/>
 	<title>E-Cinema - HOME</title>
   
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
