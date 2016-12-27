@@ -89,6 +89,7 @@
 								</ul>
 							</li>
 							<li><a href="chisiamo.php">Chi Siamo</a></li>
+							<li><a href="prenotazioneHTML.php">Prenotazioni</a></li>
 							<li class="active"><a href="utente.php">Area Riservata</a></li>
 						</ul>
 					</nav>
@@ -130,7 +131,7 @@
 								<div class="col-md-6 w3-agileits-news-left">
 									
 									<div class="col-sm-7 wthree-news-info">
-										<h5><a">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
+										<h5><a>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
 										<p>Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</p>
 									</div>
 									<div class="clearfix"> </div>

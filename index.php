@@ -168,6 +168,7 @@ session_start();
 								</ul>
 							</li>
 							<li><a href="chisiamo.php">Chi Siamo</a></li>
+							<li><a href="prenotazioneHTML.php">Prenotazioni</a></li>
 							<?php
 								if(isset($_SESSION['username'])){
 									echo '<li><a href="utente.php">Area Riservata</a></li>';
