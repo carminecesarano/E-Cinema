@@ -16,10 +16,11 @@ if(!$conn){
 }
 
 // Recupero dati dal form
-$cinema= $_POST["Cinema"];
-$film= $_POST["Film"];
-$datafilm= $_POST["datafilm"];
-$orario= $_POST["ora"];
+$cinema = $_POST["Cinema"];
+$film = $_POST["Film"];
+$datafilm = $_POST["datafilm"];
+$orario = $_POST["ora"];
+$nomeutente = $_SESSION['username'];
 
 /*//Con lo script js scegliamo sala, fila e posto sulla mappa
 $sala= $_POST["sala"];
@@ -33,13 +34,33 @@ oci_execute($stid1);
 while (oci_fetch($stid1)) {
     $codfilm = oci_result($stid1, 'CODFILM');
 }
-echo $codfilm;
 
-echo $_SESSION['username'];
+//Query ricerca codice utente
+$sql2 = "SELECT CODUTENTE FROM Amministratore.Utenti WHERE username = '$nomeutente'";
+$stid2 = oci_parse($conn, $sql2);
+oci_execute($stid2);
+while (oci_fetch($stid2)) {
+    $codutente = oci_result($stid2, 'CODUTENTE');
+}
 
+//Query ricerca codice cinema
+$sql3 = "SELECT CODCINEMA FROM Amministratore.Cinema WHERE nome = '$cinema'";
+$stid3 = oci_parse($conn, $sql3);
+oci_execute($stid3);
+while (oci_fetch($stid3)) {
+    $codcinema = oci_result($stid3, 'CODCINEMA');
+}
+echo $datafilm;
 
-/*$codutente= "SELECT CODUTENTE FROM Amministratore.UTENTI WHERE username = '$_SESSION['username']'";
-$codprogramma= "SELECT CODPROGRAMMA FROM Amministratore.CALENDARI WHERE cinema = '$cinema' AND film = '$codfilm' AND data = '$datafilm' AND orario = '$orario'";
+//Query ricerca codice programma
+$sql4 = "SELECT CODPROGRAMMA FROM Amministratore.CALENDARI WHERE ora = '$orario' AND data = '$datafilm' AND film = '$codfilm' AND cinema = '$codcinema'";
+$stid4 = oci_parse($conn, $sql4);
+oci_execute($stid4);
+while (oci_fetch($stid4)) {
+    $codprogramma = oci_result($stid4, 'CODPROGRAMMA');
+}
+/*
+
 $datapren= (date("d-m-y");
 
 
