@@ -1,11 +1,11 @@
-<?php /*
+<?php 
 	session_start();
 	if(!isset($_SESSION['username'])){
 		echo '<script type="text/javascript">'; 
     echo 'alert("Effettuare il login prima di procedere alla prenotazione.");'; 
     echo 'window.location.href = "index.php";';
     echo '</script>';
-	}*/
+	}
 ?>
 
 <!DOCTYPE html>
