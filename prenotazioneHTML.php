@@ -23,6 +23,10 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css" /> <!--FONT-->
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script> <!--JAVASCRIPT-->
 	<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+	
+	<link href="sceltaposti/css/style1.css" rel="stylesheet" type="text/css" media="all" />
+	<script src="sceltaposti/js/jquery-1.11.0.min.js"></script>
+	<script src="sceltaposti/js/jquery.seat-charts.js"></script>
 	<!-- SCRIPT PULSANTE TOP SCROLL -->
 	<script type="text/javascript" src="js/move-top.js"></script>
 	<script type="text/javascript" src="js/easing.js"></script>
@@ -111,40 +115,11 @@
 								<ul id="form_pren">									
 									<li>
 										<fieldset>
-											<legend> Scegli il Cinema </legend>
-											<select name="Cinema">
-												<option>CinemaMosc</option>
-												<option>TheEden</option>
-												<option>TheSpace</option>
-											</select>
-										</fieldset>
-									</li>		
-									<li>
-										<fieldset>
-											<legend> Scegli il Film </legend>      <!--Nel fieldset dei film dovremmo far comparire i film effettivamente in programmazione tramite una query-->
-											<select name="Film">
-												<option>Sully</option>
-												<option>Animali Fantastici</option>
-											</select>
+											<legend> Effettua la prenotazione </legend>
+											<?php include 'sceltaposti/index.html'; ?>
 										</fieldset>
 									</li>
-									<?php $data=(date("Y-m-d"));?>
-									<li>
-										<fieldset>
-											<legend> Scegli la Data </legend>
-											<input type="date" name="datafilm" min="$data">  <!-- //Impedisce l'iserimento di un data precedente a quella della visita-->
-										</fieldset>
-									</li>
-									<li>
-										<fieldset>                                <!--//Anche gli orari dovranno essere quelli realmente disponibili in programmazione -->
-											<legend> Scegli orario </legend>
-											<select name="ora">
-												<option> 21.05 </option>
-												<option> 22.05 </option>
-											</select>
-										</fieldset>
-									</li> 
-									<li><input type="submit" value="conferma"></li>
+									<li><input type="submit" class="checkout-button" value="Prenota Ora"></li>
 								</ul>
 							</form>				
 					    </div>
