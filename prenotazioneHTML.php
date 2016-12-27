@@ -107,8 +107,8 @@
 				<div class="wthree-related-news-left">
 					<div class="wthree-news-top-left">
 						<div class= "form">
-							<form action="prenotazione.php" method="post">
-								<ul id="form_pren">
+							<form action="prenotazione.php" method="post">													
+								<ul id="form_pren">									
 									<li>
 										<fieldset>
 											<legend> Scegli il Cinema </legend>
