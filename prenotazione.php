@@ -63,8 +63,13 @@ while (oci_fetch($stid4)) {
 //Query insert prenotazione
 $sql5= "INSERT INTO Amministratore.PRENOTAZIONI (utente, programma, pagato, dataprenotazione) values ('$codutente', '$codprogramma', 'Y', TO_DATE('$datapren','YYYY-MM-DD'))";
 $stid5 = oci_parse($conn, $sql5);
-oci_execute($stid5);
-echo "Prenotazione effettuata :)";
+if(oci_execute($stid5)){
+    echo '<script type="text/javascript">'; 
+    echo 'alert("Prenotazione effettuata :).");'; 
+    echo 'window.location.href = "index.php";';
+    echo '</script>';
+}
+
 
 //chiusura sessione 
 oci_close($conn);

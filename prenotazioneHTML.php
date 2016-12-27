@@ -144,7 +144,7 @@
 											</select>
 										</fieldset>
 									</li> 
-									<li><input type="submit" value="conferma"></li>					
+									<li><input type="submit" value="conferma"></li>
 								</ul>
 							</form>				
 					    </div>
