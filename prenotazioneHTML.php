@@ -111,38 +111,44 @@
 								<ul id="form_pren">
 									<li>
 										<fieldset>
-										<legend> Scegli il Cinema </legend>
+											<legend> Scegli il Cinema </legend>
 											<select name="Cinema">
 												<option>Napoli</option>
 												<option>Bagdad</option>
 												<option>Acerra</option>
 												<option>Liveri</option>
+											</select>
 										</fieldset>
 									</li>		
 									<li>
 										<fieldset>
-										<legend> Scegli il Film </legend>      <!--Nel fieldset dei film dovremmo far comparire i film effettivamente in programmazione tramite una query-->
+											<legend> Scegli il Film </legend>      <!--Nel fieldset dei film dovremmo far comparire i film effettivamente in programmazione tramite una query-->
 											<select name="Film">
 												<option>The Wolf of Wall Street</option>
 												<option>Minions</option>
 												<option>Ecceziunale Veramente</option>
 												<option>Rogue One: A Star Wars Story</option>
 												<option>Biancaneve sotto i nani</option>
+											</select>
 										</fieldset>
 									</li>
-									$data=(date("d-m-y"));
+									<?php $data=(date("d-m-y")); ?>
 									<li>
-										<label> Scegli la Data <input type="date" name="datafilm" min="$data"></label>  <!-- //Impedisce l'iserimento di un data precedente a quella della visita-->
+										<fieldset>
+											<legend> Scegli la Data </legend>
+											<input type="date" name="datafilm" min="$data">  <!-- //Impedisce l'iserimento di un data precedente a quella della visita-->
+										</fieldset>
 									</li>
 									<li>
 										<fieldset>                                <!--//Anche gli orari dovranno essere quelli realmente disponibili in programmazione -->
-										<legend> Scegli orario </legend>
+											<legend> Scegli orario </legend>
 											<select name="ora">
 												<option> 18.30 </option>
 												<option> 21.30 </option>
+											</select>
 										</fieldset>
 									</li> 
-									<li><button type="submit" value="conferma"></li>					
+									<li><input type="submit" value="conferma"></li>					
 								</ul>
 							</form>				
 					    </div>
