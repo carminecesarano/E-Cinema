@@ -12,6 +12,17 @@
 <head>
 	<title>E-Cinema - Prenotazioni</title>
 	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="icon" href="icons/favicon.ico" />
+	
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="E-Cinema" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link rel="stylesheet" href="css/faqstyle.css" type="text/css" media="all" />
@@ -27,6 +38,7 @@
 	<link href="sceltaposti/css/style1.css" rel="stylesheet" type="text/css" media="all" />
 	<script src="sceltaposti/js/jquery-1.11.0.min.js"></script>
 	<script src="sceltaposti/js/jquery.seat-charts.js"></script>
+	
 	<!-- SCRIPT PULSANTE TOP SCROLL -->
 	<script type="text/javascript" src="js/move-top.js"></script>
 	<script type="text/javascript" src="js/easing.js"></script>
@@ -116,9 +128,10 @@
 									<li>
 										<fieldset>
 											<legend> Effettua la prenotazione </legend>
-											<?php include 'sceltaposti/index.html'; ?>
+											<?php include 'sceltaposti/index.php'; ?>
 										</fieldset>
 									</li>
+									<!-- In questo punto nel DB viene inserita la prenotazione, anche se ancora dobbiamo completare il checkout -->
 									<li><input type="submit" class="checkout-button" value="Prenota Ora"></li>
 								</ul>
 							</form>				

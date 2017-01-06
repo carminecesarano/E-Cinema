@@ -117,6 +117,7 @@ div.seatCharts-legend {
 	padding-left: 0px;
 	}
 ul.seatCharts-legendList {
+	margin-top: 40px;
 	padding-left: 0px;
 	}
 .seatCharts-legendItem{
@@ -153,10 +154,10 @@ span.seatCharts-legendDescription {
     -ms-transition: 0.5s all;
 }
 #selected-seats {
-	max-height: 84px;
+	max-height: 200px;
 	overflow-y: auto;
 	overflow-x: none;
-	width: 200px;
+	width: 210px;
 	}
 #selected-seats li{
     border: 1px solid #d3d3d3;
@@ -168,7 +169,6 @@ span.seatCharts-legendDescription {
     color: #000;
     font-weight: 600;
     padding: 6px 11px;
-    width: 50%;
 	}
 .scrollbar {
     overflow-y: scroll;

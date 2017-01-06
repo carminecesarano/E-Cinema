@@ -11,6 +11,15 @@ session_start();
 	<title>E-Cinema - Chi Siamo</title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="icon" href="icons/favicon.ico" />
+	
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="E-Cinema" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
 	
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -184,9 +193,9 @@ session_start();
 						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 					</div>
 					<h3>Studenti</h3>
-					<h4>Enza D'angelo</h4>
-					<h4>Michele De Sena</h4>
-					<h4>Carmine Cesarano</h4>
+					<h4><a style="color:#fff" href="https://www.facebook.com/elfen.i.lied?fref=ts" target="_blank">Enza D'Angelo</a></h4>
+					<h4><a style="color:#fff" href="https://www.facebook.com/St.Jimmy1996?fref=ts" target="_blank">Michele De Sena</a></h4>
+					<h4><a style="color:#fff" href="https://www.facebook.com/carmine.cesarano1" target="_blank">Carmine Cesarnao</a></h4>
 				</div>
 				<div class="col-md-3 mail-wthree">
 					<div class="icon-w3">

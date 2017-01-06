@@ -9,6 +9,17 @@
 <head>
 	<title>E-Cinema - Area Riservata</title>
 	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="icon" href="icons/favicon.ico" />
+	
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="E-Cinema" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link rel="stylesheet" href="css/faqstyle.css" type="text/css" media="all" />
@@ -103,68 +114,56 @@
 			<div class="container">
 				<div class="agileits-news-top">
 					<ol class="breadcrumb">
-						<?php
+						<h3><?php
 							echo "Benvenuto/a ";
 							echo ucfirst($_SESSION['nome']);
 							echo "&nbsp";
 							echo ucfirst($_SESSION['cognome']);
-						?>
+						?></h3>
 					</ol>
 				</div>
 				<div class="agileinfo-news-top-grids">
 					<div class="col-md-8 wthree-top-news-left">
 						<div class="wthree-news-left">
 							<div class="wthree-news-left-img">
-								
-								<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</h4>
-								
+								<h4>Top left</h4>
 								<div class="w3-agile-news-text">
-									<p>Pellentesque vel urna accumsan, dictum sapien vitae, condimentum tellus. Nulla fermentum enim vitae commodo dapibus. Vivamus diam ligula, accumsan non malesuada et, interdum malesuada turpis. Donec posuere eros eget velit iaculis consequat. Vestibulum ante felis, congue a sapien pharetra, sodales congue magna. Curabitur id varius urna. Morbi finibus, velit sagittis fermentum venenatis, erat risus elementum nibh, at commodo lorem orci sed nulla. Pellentesque eu velit pulvinar, scelerisque lacus ut, semper dolor.
-									<span>Donec semper, nibh et lacinia sollicitudin, nibh dui pellentesque elit, eu placerat leo felis nec nunc. Sed bibendum pretium metus eget euismod. Mauris id lacus lacus. Praesent faucibus nunc eget turpis tristique molestie. Duis dui diam, tristique eu gravida ut, congue eget felis. Proin sapien ligula, volutpat ut ultrices sit amet, dignissim quis urna. </span>
-									Cras fermentum eu dolor in porttitor. Praesent sagittis sollicitudin scelerisque. Vivamus ac erat in ex consectetur imperdiet vel eget sapien. Duis viverra nisi id leo varius, vitae eleifend turpis vulputate. Mauris eget sagittis augue, ut efficitur mauris. Aenean risus nisi, faucibus eget condimentum at, porttitor vel felis. Aliquam eu augue ut tortor gravida iaculis in in orci. Quisque vehicula consectetur sagittis.
+									<p>Testo1
+									<span>Testo2</span>
+									Testo3
 									</p>
 								</div>
 							</div>
 						</div>
+						
 						<div class="wthree-related-news-left">
 							<div class="wthree-news-top-left">
 								<div class="col-md-6 w3-agileits-news-left">
-									
 									<div class="col-sm-7 wthree-news-info">
-										<h5><a>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
-										<p>Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</p>
+										<h3>Bottom left</h3>
+										<p>Testo</p>
 									</div>
 									<div class="clearfix"> </div>
 								</div>
 								<div class="col-md-6 w3-agileits-news-left">
-									
 									<div class="col-sm-7 wthree-news-info">
-										<h5><a>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h5>
-										<p>Sed tristique mattis fermentum. Etiam semper aliquet massa, id tempus massa mattis eget.</p>
+										<h5>Bottom right</h5>
+										<p>Testo</p>
 									</div>
 									<div class="clearfix"> </div>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
 						</div>
-						
-						<!-- //agile-comments -->
-						<div class="news-related">
-							
-						</div>
 					</div>
 					<div class="col-md-4 wthree-news-right">
-						<!-- news-right-top -->
 						<div class="news-right-top">
-							
 							<div class="wthree-news-right-top">
 								<div class="news-grids-bottom">
 									
 								</div>
 							</div>
 						</div>
-						<!-- //news-right-top -->
-						
 					</div>
 					<div class="clearfix"> </div>
 				</div>

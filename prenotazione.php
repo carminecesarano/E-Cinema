@@ -53,7 +53,7 @@ while (oci_fetch($stid3)) {
 }
 
 //Query ricerca codice programma
-$sql4 = "SELECT CODPROGRAMMA FROM Amministratore.CALENDARI WHERE ora = TO_NUMBER('$orario', '99.99') AND film = '$codfilm' AND cinema = '$codcinema' AND data = TO_DATE('$datafilm','YYYY-MM-DD')";
+$sql4 = "SELECT CODPROGRAMMA FROM Amministratore.CALENDARI WHERE ora = '$orario' AND film = '$codfilm' AND cinema = '$codcinema' AND data = TO_DATE('$datafilm', 'YYYY-MM-DD')";
 $stid4 = oci_parse($conn, $sql4);
 oci_execute($stid4);
 while (oci_fetch($stid4)) {
@@ -64,15 +64,14 @@ while (oci_fetch($stid4)) {
 $sql5= "INSERT INTO Amministratore.PRENOTAZIONI (utente, programma, pagato, dataprenotazione) values ('$codutente', '$codprogramma', 'Y', TO_DATE('$datapren','YYYY-MM-DD'))";
 $stid5 = oci_parse($conn, $sql5);
 if(oci_execute($stid5)){
-    echo '<script type="text/javascript">'; 
-    echo 'alert("Prenotazione effettuata :).");'; 
-    echo 'window.location.href = "index.php";';
-    echo '</script>';
+    echo '<script type="text/javascript">';
+    echo 'var stile = "top=50, left=428, width=480, height=506, status=no, menubar=no, toolbar=no scrollbars=no";';
+    echo 'alert("Prenotazione effettuata, procedere al pagamento.");';    //IN QUESTO PUNTO NON DEVE ESSERE SETTATO PAGATO=Y. SETTARLO SOLO DOPO LA FINE DEL PAGAMENTO
+    echo 'window.open("pagamento/index.php", "", stile);';    
+    echo '</script>';  
 }
-
 
 //chiusura sessione 
 oci_close($conn);
 
 ?>
-

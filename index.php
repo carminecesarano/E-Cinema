@@ -12,6 +12,15 @@ session_start();
 	<title>E-Cinema - HOME</title>
   
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="icon" href="icons/favicon.ico" />
+	
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="E-Cinema" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
 	
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -58,7 +67,9 @@ session_start();
 	<div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index.php"><h1>E-CINEMA</h1></a>
+				<a href="index.php">
+					<h1>E-CINEMA</h1>
+				</a>
 			</div>
 			
 			<div class="sign_in_register">
@@ -186,8 +197,8 @@ session_start();
 	<div id="slidey" style="display:none;">
 		<ul>
 			<li><img src="images/1.jpg" alt=" "><p class='title'>The Wolf of Wall Street</p><p class='description'> Jordan Belfort (Leonardo Di Caprio) di giorno riesce a guadagnare migliaia di dollari che con la stessa velocità sperpera in droga, sesso e viaggi intorno al mondo. Però negli anni Novanta il suo appetito insaziabile gettano il suo nome nel fango.</p></li>
-			<li><img src="images/2.jpg" alt=" "><p class='title'>Rogue One: A Star Wars Story</p><p class='description'>Jyn Erso, a Rebellion soldier and criminal, is about to experience her biggest challenge yet when Mon Mothma sets her out on a mission to steal the plans for the Death Star. With help from the Rebels, a master swordsman, and non-allied forces, Jyn will be in for something bigger than she thinks.</p></li>
-			<li><img src="images/3.jpg" alt=" "><p class='title'>...</p><p class='description'>...</p></li>
+			<li><img src="images/2.jpg" alt=" "><p class='title'>Rogue One: A Star Wars Story</p><p class='description'>Il primo spin-off di Guerre Stellari, la trama è ambientata tra la fine di La vendetta dei Sith e l'inizio di Una nuova speranza.</p></li>
+			<li><img src="images/3.jpg" alt=" "><p class='title'>Trainspotting 2</p><p class='description'>Nove anni dopo gli avvenimenti del precedessore Trainspotting, Renton, Sick Boy, Begbie e Spud, tornano sul grande schermo tracciando le loro vite non più alle prese con i problemi legati all'eroina bensì con l'idea di realizzare un business legato alla pornografia.</p></li>
 			<li><img src="images/4.jpg" alt=" "><p class='title'>...</p><p class='description'>...</p></li>
 			<li><img src="images/5.jpg" alt=" "><p class='title'>...</p><p class='description'>...</p></li>
 			<li><img src="images/6.jpg" alt=" "><p class='title'>...</p><p class='description'>...</p></li>
