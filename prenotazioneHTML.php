@@ -131,7 +131,6 @@
 											<?php include 'sceltaposti/index.php'; ?>
 										</fieldset>
 									</li>
-									<!-- In questo punto nel DB viene inserita la prenotazione, anche se ancora dobbiamo completare il checkout -->
 									<li><input type="submit" class="checkout-button" value="Prenota Ora"></li>
 								</ul>
 							</form>				

@@ -1,4 +1,12 @@
-<html>						
+<html>
+<!--<head>
+	<script type='text/javascript'>
+		window.onload=function(){
+	    var today = new Date().toISOString().split('T')[0];
+	    document.getElementsByName("datafilm")[0].setAttribute('min', today);
+		}
+	</script>
+</head>-->
 <div class="content">
 	<div class="main">
 		<div class="demo">
@@ -33,7 +41,7 @@
 					</li>
 					<li>
 						<fieldset>
-							<input type="date" name="datafilm" min="$data">  
+							<input name="datafilm" type="date"> 
 						</fieldset>
 					</li>
 					<li>
@@ -55,8 +63,8 @@
 		</div>
 
 			<script type="text/javascript">
-				//var firstSeatLabel = 1;
-		
+				var firstSeatLabel = 1;
+				
 				$(document).ready(function() {
 					var $cart = $('#selected-seats'),
 						$counter = $('#counter'),
@@ -85,8 +93,7 @@
 						naming : {
 							top : false,
 							getLabel : function (character, row, column) {
-								//return firstSeatLabel++; //numeri progressivi
-								return column;
+								return firstSeatLabel++; 
 							},
 						},
 						legend : {
@@ -100,20 +107,20 @@
 						click: function () { 
 							if (this.status() == 'available') { 
 								//creiamo un nuovo <li> che verrà aggiunto al carrello
-								$('<li>Fila'+(this.settings.row+1)+' Posto'+this.settings.label+'</b> <a href="#" class="cancel-cart-item">[cancella]</a></li>')
+								$('<li>Fila'+(this.settings.row+1)+' Posto'+(this.settings.label)+'</b> <a href="#" class="cancel-cart-item">[cancella]</a><input type="hidden" name="Posto[]" value="'+this.settings.label+'"><input type="hidden" name="Fila[]" value="'+this.settings.row+'"></li>')
 									.attr('id', 'cart-item-'+this.settings.id)
 									.data('seatId', this.settings.id)
 									.appendTo($cart);
-
+									
 								/*
 								 * Aggiorna il contatore e il totale
 								 *
 								 * .la funzione find non troverà il posto attuale, perchè cambierà il suo stato solo dopo aver ritornato 'selected'.
-								 * Dunque dobbiamo aggiungere uno alla lunghezza and il prezzo del posto corrente al totale.
+								 * Dunque dobbiamo aggiungere uno alla lunghezza e il prezzo del posto corrente al totale.
 								 */
 								$counter.text(sc.find('selected').length+1);
 								$total.text(recalculateTotal(sc)+this.data().price);
-											
+								
 								return 'selected';
 							} else if (this.status() == 'selected') {
 								//aggiorna il contatore
@@ -121,7 +128,7 @@
 								//e il totale
 								$total.text(recalculateTotal(sc)-this.data().price);
 						
-								//rimuovi l'elemento dal nostro carrell
+								//rimuovi l'elemento dal nostro carrello
 								$('#cart-item-'+this.settings.id).remove();
 						
 								//il posto è libero
@@ -156,6 +163,22 @@
 			
 				return total;
 				}
+				
+				/* AGGIORNAMENTO AUTOMATICO PAGINA
+				setInterval(function() { 
+					$.ajax({ 
+					    type     : 'get', 
+					    url      : 'book.php', 
+					    dataType : 'json', 
+					    success  : function(response) { 
+			        //Through all seats
+			        $.each(response.bookings, function(index, booking) { 
+		            //The seats have been sold to the invalid state
+		            sc.status(booking.seat_id, 'unavailable'); 
+					        }); 
+					    } 
+					}); 
+				}, 10000); //per 10s */
 			</script>
 	</div>
 	

@@ -23,10 +23,6 @@ $orario = $_POST["ora"];
 $nomeutente = $_SESSION['username'];
 $datapren=(date("Y-m-d"));
 
-/*//Con lo script js scegliamo sala, fila e posto sulla mappa
-$sala= $_POST["sala"];
-$fila= $_POST["fila"];
-$posto= $_POST["posto"];*/
 
 //Query ricerca codice film
 $sql1 = "SELECT CODFILM FROM Amministratore.Film_Programmazione where titolo = '$film'";
@@ -60,13 +56,43 @@ while (oci_fetch($stid4)) {
     $codprogramma = oci_result($stid4, 'CODPROGRAMMA');
 }
 
-//Query insert prenotazione
+//Query INSERT PRENOTAZIONE
 $sql5= "INSERT INTO Amministratore.PRENOTAZIONI (utente, programma, pagato, dataprenotazione) values ('$codutente', '$codprogramma', 'Y', TO_DATE('$datapren','YYYY-MM-DD'))";
 $stid5 = oci_parse($conn, $sql5);
-if(oci_execute($stid5)){
+$execute1 = oci_execute($stid5);
+
+//Query ricerca id della prenotazione effettuata(l'ultima)
+$sql6 = "SELECT idprenotazione FROM Amministratore.PRENOTAZIONI WHERE idprenotazione = (SELECT max(idprenotazione) FROM Amministratore.PRENOTAZIONI)";
+$stid6 = oci_parse($conn, $sql6);
+oci_execute($stid6);
+while (oci_fetch($stid6)) {
+    $idpren = oci_result($stid6, 'IDPRENOTAZIONE');
+}
+
+//Query ricerca sala prenotazione effettuata
+$sql7 = "SELECT sala FROM Amministratore.AFFERENZE_SALA WHERE programma = '$codprogramma' AND cinema = '$codcinema'";
+$stid7 = oci_parse($conn, $sql7);
+oci_execute($stid7);
+while (oci_fetch($stid7)) {
+    $codsala = oci_result($stid7, 'SALA');
+}
+
+//Query INSERT POSTO/FILA
+$posto = $_POST['Posto'];
+$fila = $_POST['Fila'];
+
+for($i=0, $n=count($posto); $i<$n; $i++){
+    $varfila = $fila[$i]+1;
+    $sql8 = "INSERT INTO Amministratore.AFFERENZE_POSTO (prenotazione, numposto, numfila, sala, cinema) values ('$idpren', '$posto[$i]', '$varfila', '$codsala', '$codcinema')";
+    $stid8 = oci_parse($conn, $sql8);
+    $execute2 = oci_execute($stid8);
+}
+
+if ($execute1 && $execute2) {
     echo '<script type="text/javascript">';
+    echo 'window.location.href = "prenotazioneHTML.php";';
     echo 'var stile = "top=50, left=428, width=480, height=506, status=no, menubar=no, toolbar=no scrollbars=no";';
-    echo 'alert("Prenotazione effettuata, procedere al pagamento.");';    //IN QUESTO PUNTO NON DEVE ESSERE SETTATO PAGATO=Y. SETTARLO SOLO DOPO LA FINE DEL PAGAMENTO
+    echo 'alert("Prenotazione effettuata, procedere al pagamento.");';    
     echo 'window.open("pagamento/index.php", "", stile);';    
     echo '</script>';  
 }

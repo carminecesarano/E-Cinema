@@ -18,7 +18,7 @@
 
 <body>
   <div class='container'>
-  <form class='modal'>
+  <form class='modal' action="pagamento.php" method="post">
     <header class='header'>
       <h1>Pagamento di € </h1>
       <div class='card-type'>
@@ -41,23 +41,23 @@
         <div class='form-row'>
           <div class='input-group'>
             <label for=''>Intestatario della carta</label>
-            <input placeholder='' type='text'>
+            <input name="intestatario" type='text'>
           </div>
         </div>
         <div class='form-row'>
           <div class='input-group'>
             <label for=''>Numero della carta</label>
-            <input maxlength='16' placeholder='' type='number'>
+            <input maxlength='16' name="number" type='number'>
           </div>
         </div>
         <div class='form-row'>
           <div class='input-group'>
             <label for=''>Data scadenza</label>
-            <input placeholder='' type='month'>
+            <input name="data" type='month'>
           </div>
           <div class='input-group'>
             <label for=''>CVS</label>
-            <input maxlenght='4' placeholder='' type='number'>
+            <input maxlenght='4' name="cvs" type='number'>
           </div>
         </div>
       </div>
