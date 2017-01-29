@@ -78,7 +78,7 @@ session_start();
 						if(isset($_SESSION['username'])){
 							echo '<li><a href="logout.php">Logout</a></li>';
 						}else{
-						echo '<li><a href="#" data-toggle="modal" data-target="#myModal">Login & SignUp</a></li>';
+						echo '<li><a href="#" data-toggle="modal" data-target="#myModal">Login & Sign Up</a></li>';
 						}
 					?>
 				</ul>
